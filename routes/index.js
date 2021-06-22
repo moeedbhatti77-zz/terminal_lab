@@ -19,11 +19,20 @@ router.get('/cart',async  function(req, res, next) {
 });
 router.get('/cart/:id',async  function(req, res, next) {
   product = await Product.findById(req.params.id);
-  console.log(product);
   let cart = [];
   if(req.cookies.cart) cart =  req.cookies.cart;
   cart.push(product);
   res.cookie('cart',cart);
+  res.redirect('/');
+});
+router.get('/cart/remove/:id',async  function(req, res, next) {
+  cart = [];
+  if(req.cookies.cart)
+  cart = req.cookies.cart;
+  cart.splice(cart.findIndex(i=>{
+    i._id = req.params.id;
+  }),1);
+
   res.redirect('/');
 });
 router.post('/add',async  function(req, res, next) {
