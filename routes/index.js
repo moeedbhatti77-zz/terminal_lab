@@ -9,5 +9,8 @@ router.get('/',async  function(req, res, next) {
   // console.log(products);
   res.render('index',{ products });
 });
+router.get('/add',async  function(req, res, next) {
+  res.render('add');
+});
 
 module.exports = router;
