@@ -10,16 +10,17 @@ router.get('/signup',async function(req, res, next) {
 router.get('/login',async function(req, res, next) {
   res.render('login');
 });
+router.get('/logout',async function(req, res, next) {
+  delete req.session.user;
+  console.log(req.session);
+  res.redirect('/');
+});
 router.post('/login',async function(req, res, next) {
   let user = await Users.findOne({
     email: req.body.email,
     password : req.body.password
   });
-  if(!user)
-  {
-    res.redirect('/users/login');
-  }
-  console.log(user);
+  if(!user)    res.redirect('/users/login');
   req.session.user = user;
   res.redirect('/');
 });

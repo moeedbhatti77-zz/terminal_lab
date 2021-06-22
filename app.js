@@ -15,7 +15,7 @@ app.use(session({
   secret : 'terminal',
   resave : true,
   saveUninitialized : true,
-  cookie : {maxAge:60000 ,secure:true}
+  cookie : {maxAge:600000}
 }));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
