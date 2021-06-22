@@ -1,5 +1,6 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  each product in products 
+    h3= product.name
+  //- p Welcome to #{title}
