@@ -4,7 +4,7 @@ const Users = require("../models/UsersModel");
 
 /* GET users listing. */
 router.get('/signup',async function(req, res, next) {
-  console.log(req.Session.user);
+  // console.log(req.Session.user);
   res.render('signup');
 });
 router.get('/login',async function(req, res, next) {
