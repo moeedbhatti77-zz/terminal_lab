@@ -32,8 +32,8 @@ router.get('/cart/remove/:id',async  function(req, res, next) {
   cart.splice(cart.findIndex(i=>{
     i._id = req.params.id;
   }),1);
-
-  res.redirect('/');
+  res.cookie('cart',cart);
+  res.redirect('/cart');
 });
 router.post('/add',async  function(req, res, next) {
   product = new Product(req.body);
