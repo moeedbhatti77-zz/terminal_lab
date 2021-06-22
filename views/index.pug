@@ -15,6 +15,13 @@ block content
           th Rating
           th Cart
       tbody 
+        tr 
+          td name
+          td name
+          td name
+          td name
+          td 
+            a(href="/cart/"+product._id).btn.btn-primary Add to Cart 
         each product in products 
           tr 
             td=product.name
