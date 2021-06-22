@@ -4,11 +4,10 @@ var Product = require('../models/ProductModel');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  // res.render('index', { title: 'Express' });
-  products = Product.find();
-  // console.log(products.name);
-  res.render('index',{products});
+router.get('/',async  function(req, res, next) {
+  products = await Product.find();
+  // console.log(products);
+  res.render('index',{ products });
 });
 
 module.exports = router;

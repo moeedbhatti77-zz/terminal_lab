@@ -39,12 +39,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+
 mongoose.connect('mongodb+srv://dbUser:user123@assignment.oaubb.mongodb.net/terminal?retryWrites=true&w=majority',
-{ useNewUrlParser: true,
+{ 
+  useNewUrlParser: true,
   useUnifiedTopology: true 
 }
 ).then(()=>{
-  console.log('Connected to Terminal');
+  console.log('Connected');
 })
 .catch(err=>{
   console.log(err.message);
