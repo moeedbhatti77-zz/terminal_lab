@@ -14,7 +14,6 @@ block content
           th Price
           th Rating
           th Cart
-          th Update
       tbody 
         each product in products 
           tr 
@@ -23,6 +22,4 @@ block content
             td=product.price
             td=product.rating
             td 
-              button.btn.btn-primary Add to Cart 
-            td 
-              a(href="/update") Update 
+              a(href="/cart/"+product._id).btn.btn-primary Add to Cart 
