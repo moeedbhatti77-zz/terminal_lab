@@ -56,7 +56,11 @@ mongoose.connect('mongodb+srv://dbUser:user123@assignment.oaubb.mongodb.net/term
   console.log('Connected');
 })
 .catch(err=>{
-  console.log(err.message);
-});;
+  // console.log(err.message);
+  (err, req, res, next) => {
+    console.log('congrats you hit the error middleware');
+    res.redirect('/')
+}
+});
 
 module.exports = app;

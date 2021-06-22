@@ -8,7 +8,7 @@ block content
       a(href="/add").btn.btn-primary(style="float:right") Add Product 
       br
     br
-    table.table.table-hover 
+    table.table.table-striped.table-hover.table-dark.align-items-center
       thead.table-dark 
         tr 
           th Name
@@ -27,7 +27,7 @@ block content
               while n<=4
                 if product.rating-1>=n
                   span 
-                    i.fa.fa-star(style="color:yellow")
+                    i.fa.fa-star(style="color:green")
                 else
                   span 
                     i.fa.fa-star
