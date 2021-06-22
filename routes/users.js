@@ -4,6 +4,7 @@ const Users = require("../models/UsersModel");
 
 /* GET users listing. */
 router.get('/signup',async function(req, res, next) {
+  console.log(req.Session.user);
   res.render('signup');
 });
 router.get('/login',async function(req, res, next) {
@@ -15,8 +16,11 @@ router.post('/login',async function(req, res, next) {
     password : req.body.password
   });
   if(!user)
-  res.redirect('/users/login');
-  
+  {
+    res.redirect('/users/login');
+  }
+  console.log(user);
+  req.session.user = user;
   res.redirect('/');
 });
 router.post('/signup',async function(req, res, next) {
