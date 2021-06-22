@@ -11,7 +11,7 @@ router.get('/login',async function(req, res, next) {
 router.post('/signup',async function(req, res, next) {
   user = new Users(req.body);
   await user.save();
-  res.redirect('/login');
+  res.redirect('/users/login');
 });
 
 module.exports = router;
