@@ -7,6 +7,5 @@ const productSchema =  mongoose.Schema({
     rating : Number
 });
 
-// const Faculty = mongoose.model('test',facultySchema);
 const Product = mongoose.model('product',productSchema);
 module.exports = Product;
