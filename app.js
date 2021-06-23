@@ -57,9 +57,7 @@ mongoose.connect('mongodb+srv://dbUser:user123@assignment.oaubb.mongodb.net/term
 })
 .catch(err=>{
   // console.log(err.message);
-  (err, req, res, next) => {
-    console.log('congrats you hit the error middleware');
-    res.redirect('/')
+  console.log(err.message);
 }
 });
 
