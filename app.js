@@ -59,7 +59,6 @@ mongoose.connect('mongodb+srv://dbUser:User1234@assignment.oaubb.mongodb.net/ter
 .catch(err=>{
   // console.log(err.message);
   console.log(err.message);
-}
 });
 
 module.exports = app;
